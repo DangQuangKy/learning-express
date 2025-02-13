@@ -18,7 +18,7 @@ app.use(express.urlencoded({
 }))
 
 app.use(express.json())
-app.use(morgan('combined')) 
+// app.use(morgan('combined')) 
 
 // template engine
 app.engine('hbs', handlebars.engine({

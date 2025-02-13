@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables';
 
 * {
     margin: 0;
@@ -7,4 +7,7 @@
 }
 .card-item{
     margin-top: 16px;
+}
+.mt-6{
+    margin-top: 5rem;
 }
