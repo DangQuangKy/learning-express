@@ -19,8 +19,10 @@
   "homepage": "https://github.com/DangQuangKy/learning-express#readme",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "express-handlebars": "^8.0.1"
+    "express-handlebars": "^8.0.1",
+    "mongoose": "^8.10.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
