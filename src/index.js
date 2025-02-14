@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 }))
 
 app.use(express.json())
-app.use(morgan('combined')) 
+// app.use(morgan('combined')) 
 
 // HTTP method override
 app.use(methodOverride('_method'))
@@ -29,6 +29,17 @@ app.engine('hbs', handlebars.engine({
     extname: '.hbs',
     helpers: {
         sum: (a, b) => a + b,
+        formatDate: (date) => {
+            if (!date) return 'N/A';
+            return new Date(date).toLocaleString('vi-VN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            });
+        }
     }
 }))
 app.set('view engine','hbs')

@@ -20,7 +20,7 @@ class CourseController {
     store(req, res, next) {
         const course = new Course(req.body)
         course.save()
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/me/stored/courses'))
         .catch(next);
     }
 
@@ -41,8 +41,22 @@ class CourseController {
     }
     // [DELETE] /course/:id
     delete(req, res, next) {
+        Course.delete({ _id: req.params.id })
+        .then(() => res.redirect(req.get('Referrer') || '/'))
+        .catch(next);
+    }
+
+    // [DELETE] /course/:id/force
+    forceDelete(req, res, next) {
         Course.deleteOne({ _id: req.params.id })
-        .then(() => res.redirect('back'))
+        .then(() => res.redirect(req.get('Referrer') || '/'))
+        .catch(next);
+    }
+
+    // [PATCH] /course/:id/restore
+    restore(req, res, next) {
+        Course.restore({ _id: req.params.id })
+        .then(() => res.redirect(req.get('Referrer') || '/'))
         .catch(next);
     }
 }
