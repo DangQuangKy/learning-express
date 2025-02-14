@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 }))
 
 app.use(express.json())
-// app.use(morgan('combined')) 
+app.use(morgan('combined')) 
 
 // HTTP method override
 app.use(methodOverride('_method'))

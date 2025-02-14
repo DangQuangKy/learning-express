@@ -2,16 +2,16 @@
     <div class="row">
         {{#each courses}}
         <div class="col-sm-6 col-lg-4">
-            <div class="card card-item">
+            <div class="card card-item h-100"> 
                 <a href="/courses/{{this.slug}}">
                     <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
                 </a>
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <a href="/courses/{{this.slug}}">
                         <h5 class="card-title">{{this.name}}</h5>
                     </a>
-                    <p class="card-text">{{this.description}}</p>
-                    <a href="#" class="btn btn-primary">Buy Course</a>
+                    <p class="card-text flex-grow-1">{{this.description}}</p> 
+                    <a href="#" class="btn btn-primary mt-auto">Buy Course</a>
                 </div>
             </div>
         </div>
