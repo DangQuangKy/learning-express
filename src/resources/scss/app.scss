@@ -1,22 +1,26 @@
 @use 'variables';
 
-.card-item{
+.card-item {
     margin-top: 16px;
 }
-.mt-6{
+
+.mt-6 {
     margin-top: 5rem;
 }
-a{
+
+a {
     text-decoration: none !important;
-    &:hover{
-       color: #dc3545 !important;
+
+    &:hover {
+        color: #dc3545 !important;
     }
 }
 
-.block{
+.block {
     display: block;
 }
-.user-avatar{
+
+.user-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -34,15 +38,18 @@ a{
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+
     h1 {
         font-size: 6rem;
         font-weight: bold;
         color: #dc3545;
     }
+
     p {
         font-size: 1.5rem;
         color: #6c757d;
     }
+
     .btn-home {
         margin-top: 20px;
         font-size: 1.2rem;
@@ -56,7 +63,8 @@ a{
     align-items: center;
     margin-top: 20px;
 
-    a, span {
+    a,
+    span {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -96,5 +104,76 @@ a{
     .disabled {
         pointer-events: none;
         opacity: 0.5;
+    }
+}
+
+.back-to-top {
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: #0056b3;
+        color: white !important;
+    }
+}
+
+.bg-pink {
+    background: #f76758;
+}
+
+.end-9 {
+    right: 9px;
+}
+
+.min-header {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.bg-green {
+    background-color: #00bc86;
+}
+
+.box-service {
+    display: flex;
+    justify-content: center;
+
+    .image-service {
+        display: inline-block;
+    }
+
+    .content-service {
+        display: inline-block;
+        width: calc(100% - 30px);
+        float: left;
+        margin-left: 15px;
+
+        .title-service {
+            display: block;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .des-service {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19px;
+            color: #fff;
+        }
     }
 }
