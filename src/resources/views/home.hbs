@@ -1,10 +1,10 @@
 <div class="mt-4">
     <h2 class="text-center mb-4">Danh sách khóa học</h2>
-    
+
     <div class="row">
         {{#each courses}}
         <div class="col-sm-6 col-lg-4 mb-4">
-            <div class="card card-item h-100"> 
+            <div class="card card-item h-100">
                 <a href="/courses/{{this.slug}}">
                     <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
                 </a>
@@ -12,11 +12,34 @@
                     <a href="/courses/{{this.slug}}">
                         <h5 class="card-title">{{this.name}}</h5>
                     </a>
-                    <p class="card-text flex-grow-1">{{this.description}}</p> 
+                    <p class="card-text flex-grow-1">{{this.description}}</p>
                     <a href="#" class="btn btn-primary mt-auto">Buy Course</a>
                 </div>
             </div>
         </div>
         {{/each}}
+    </div>
+
+    {{!-- phan trang --}}
+    <div class="pagination">
+        {{#if hasPrevPage}}
+        <a href="?page={{prevPage}}&limit=3">&laquo;</a>
+        {{else}}
+        <span class="disabled">&laquo;</span>
+        {{/if}}
+
+        {{#each pages}}
+        {{#if isActive}}
+        <span class="active">{{number}}</span>
+        {{else}}
+        <a href="?page={{number}}&limit=3">{{number}}</a>
+        {{/if}}
+        {{/each}}
+
+        {{#if hasNextPage}}
+        <a href="?page={{nextPage}}&limit=3">&raquo;</a>
+        {{else}}
+        <span class="disabled">&raquo;</span>
+        {{/if}}
     </div>
 </div>
