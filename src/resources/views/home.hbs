@@ -5,7 +5,8 @@
         <div class="container d-flex justify-content-between ">
             <div class="box-service">
                 <div class="image-service">
-                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_1.png?1707187039390" alt="">
+                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_1.png?1707187039390"
+                        alt="">
                 </div>
                 <div class="content-service">
                     <span class="title-service">Giảng viên uy tín</span>
@@ -14,7 +15,8 @@
             </div>
             <div class="box-service">
                 <div class="image-service">
-                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_2.png?1707187039390" alt="">
+                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_2.png?1707187039390"
+                        alt="">
                 </div>
                 <div class="content-service">
                     <span class="title-service">Thanh toán 1 lần</span>
@@ -23,7 +25,8 @@
             </div>
             <div class="box-service">
                 <div class="image-service">
-                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_3.png?1707187039390" alt="">
+                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_3.png?1707187039390"
+                        alt="">
                 </div>
                 <div class="content-service">
                     <span class="title-service">Học trực tuyến</span>
@@ -32,19 +35,19 @@
             </div>
             <div class="box-service">
                 <div class="image-service">
-                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_4.png?1707187039390" alt="">
+                    <img src="https://bizweb.dktcdn.net/100/453/393/themes/894913/assets/service_4.png?1707187039390"
+                        alt="">
                 </div>
                 <div class="content-service">
                     <span class="title-service">Cam kết chất lượng</span>
                     <span class="des-service">Chứng chỉ giáo dục</span>
                 </div>
             </div>
-           
+
         </div>
     </div>
-    <h2 class="text-center mb-4">Danh sách khóa học</h2>
-
     <div class="container">
+        <h2 class="text-center text-success mt-4 mb-4 title">Danh sách khóa học</h2>
         <div class="row" id="courses-list">
             {{#each courses}}
             <div class="col-sm-6 col-lg-4 mb-4">
@@ -91,20 +94,20 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Khôi phục vị trí cuộn khi tải trang
-        if (localStorage.getItem("scrollPosition")) {
-            window.scrollTo(0, localStorage.getItem("scrollPosition"));
+        //  Lấy vị trí cuộn từ localStorage và đặt lại trang
+        let savedPosition = localStorage.getItem("scrollPosition");
+        if (savedPosition) {
+            window.scrollTo(0, savedPosition);
+            localStorage.removeItem("scrollPosition"); // Xóa sau khi sử dụng
         }
 
-        // Bắt sự kiện click vào phân trang
+        // Gán sự kiện click cho các liên kết trong phân trang
         document.querySelectorAll(".pagination a").forEach(function (link) {
             link.addEventListener("click", function (event) {
-                event.preventDefault(); // Ngăn chặn load lại trang
-                let scrollPosition = window.scrollY; // Lấy vị trí cuộn hiện tại
-                localStorage.setItem("scrollPosition", scrollPosition); // Lưu vào localStorage
-                window.location.href = this.href; // Chuyển đến trang mới
+                event.preventDefault(); // Ngăn chặn load lại trang ngay lập tức
+                localStorage.setItem("scrollPosition", window.scrollY); // Lưu vị trí cuộn hiện tại
+                window.location.href = this.href; // Chuyển hướng đến trang mới
             });
         });
     });
 </script>
-
